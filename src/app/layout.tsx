@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins(
+  { subsets: ["latin"], weight: ['400', '700'] }
+);
 
 export const metadata: Metadata = {
-  title: "Lama Dev E-Commerce Application",
-  description: "A complete e-commerce application with Next.js and Wix",
+  title: "Jarvs Blog Application",
+  description: "A complete Blog application with Next.js and kinde",
 };
 
 export default function RootLayout({
@@ -15,8 +19,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${poppins.className} bg-slate-200`}>
+
+        <main className="container mx-auto bg-white h-screen">
+          <Navbar />
+          
+          {children}
+
+          <Footer />
+        </main>
+        
+      </body>
     </html>
   );
 }
