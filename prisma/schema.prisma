@@ -27,5 +27,5 @@ model Blogs {
   description   String?
   published Boolean  @default(false)
   authorId  Int
-  User      User     @relation(fields: [authorId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  User      User?     @relation(fields: [authorId], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }
