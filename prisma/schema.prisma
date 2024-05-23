@@ -21,11 +21,11 @@ model User {
 }
 
 model Blogs {
-  id        Int      @id @default(autoincrement())
-  title     String   @db.VarChar(255)
-  createdAt DateTime @default(now()) @db.Timestamp(6)
+  id            Int      @id @default(autoincrement())
+  title         String   @db.VarChar(255)
+  createdAt     DateTime @default(now()) @db.Timestamp(6)
   description   String?
-  published Boolean  @default(false)
-  authorId  Int
-  User      User?     @relation(fields: [authorId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  published     Boolean  @default(false)
+  authorId      Int
+  User          User?     @relation(fields: [authorId], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }
