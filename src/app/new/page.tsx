@@ -34,6 +34,11 @@ const CreatePosts = async () => {
             rows={5}
           ></textarea>
 
+          <div className="flex justify-center gap-2 items-center mb-2">
+            <label>Published</label>
+            <input type="checkbox" name="published" />
+          </div>
+
           <button
             type="submit"
             className="bg-indigo-500 hover:bg-indigo-700 py-2 px-5 rounded-md text-white font-bold w-full"

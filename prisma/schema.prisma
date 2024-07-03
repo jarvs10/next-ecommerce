@@ -17,15 +17,15 @@ model User {
   id      Int      @id @default(autoincrement())
   name    String?  @db.VarChar(255)
   email   String   @unique @db.VarChar(255)
-  Blog    Blogs[]
+  // Blog    Blogs[]
 }
 
 model Blogs {
   id            Int      @id @default(autoincrement())
   title         String   @db.VarChar(255)
   createdAt     DateTime @default(now()) @db.Timestamp(6)
-  description   String?
+  description   String
   published     Boolean  @default(false)
-  authorId      Int
-  User          User?     @relation(fields: [authorId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  // authorId      Int
+  // User          User?     @relation(fields: [authorId], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }
