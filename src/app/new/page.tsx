@@ -1,5 +1,4 @@
 import { createPost } from "@/actions/actions";
-import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
 import React from "react";
@@ -43,14 +42,10 @@ const CreatePosts = async () => {
             type="submit"
             className="bg-indigo-500 hover:bg-indigo-700 py-2 px-5 rounded-md text-white font-bold w-full"
           >
-            Submit
+            Crear Post
           </button>
         </div>
       </form>
-
-      <LogoutLink className="bg-black hover:bg-black/80 py-2 px-5 text-white font-bold rounded-md">
-        Logout
-      </LogoutLink>
     </div>
   );
 };

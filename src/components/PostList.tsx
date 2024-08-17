@@ -23,7 +23,6 @@ const PostList = async ({ params }: Params) => {
         {postId?.description}
       </p>
       <p>Published: <span>{postId?.published ?  "Yes" : "No"}</span></p>
-
     </>
   );
 };
