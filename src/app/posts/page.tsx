@@ -21,19 +21,23 @@ const Posts = async () => {
               Please log in to view your posts.
             </Link>
           ) : (
-            results.map((post: Blogs) => {
-              return (
-                <div key={post.id} className="p-2 mb-4">
-                  <Link
-                    className="hover:underline underline-offset-2"
-                    href={`/posts/${post.id}`}
-                    passHref
-                  >
-                    <h2 className="text-lg font-medium mb-2">{post.title}</h2>
-                  </Link>
-                </div>
-              );
-            })
+            results.length === 0 ? (
+              <p>No posts found.</p>
+            ) : (
+              results.map((post: Blogs) => {
+                return (
+                  <div key={post.id} className="p-2 mb-4">
+                    <Link
+                      className="hover:underline underline-offset-2"
+                      href={`/posts/${post.id}`}
+                      passHref
+                    >
+                      <h2 className="text-lg font-medium mb-2">{post.title}</h2>
+                    </Link>
+                  </div>
+                );
+              })
+            )
           )
         }
       </section>

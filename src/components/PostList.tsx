@@ -1,5 +1,7 @@
 import prisma from "@/libs/prisma";
 import React from "react";
+import DeleteButton from "./DeleteButton";
+import { Blogs } from "@prisma/client";
 
 interface Params {
   params: {
@@ -23,6 +25,7 @@ const PostList = async ({ params }: Params) => {
         {postId?.description}
       </p>
       <p>Published: <span>{postId?.published ?  "Yes" : "No"}</span></p>
+      <DeleteButton postId={postId as Blogs} />
     </>
   );
 };
