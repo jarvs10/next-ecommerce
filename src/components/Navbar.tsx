@@ -5,6 +5,7 @@ import React from "react";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import LogoutButton from "./LogoutButton";
 import Image from "next/image";
+import { ModeToggle } from "./ui/toggle-mode";
 
 const Navbar = () => {
   const { user } = useKindeBrowserClient();
@@ -19,7 +20,7 @@ const Navbar = () => {
           href="/"
           passHref
         >
-          J
+          Blog
         </Link>
       </section>
 
@@ -27,8 +28,8 @@ const Navbar = () => {
         <Link
           className={
             pathname === "/"
-              ? "text-black text-lg font-semibold underline underline-offset-4 decoration-4 decoration-indigo-600"
-              : "text-lg font-semibold text-slate-400"
+              ? "text-indigo-500 text-lg font-semibold underline underline-offset-4 decoration-4 decoration-indigo-600"
+              : "text-lg font-semibold text-slate-500"
           }
           href={"/"}
           passHref
@@ -38,8 +39,8 @@ const Navbar = () => {
         <Link
           className={
             pathname === "/posts"
-              ? "text-black text-lg font-semibold underline underline-offset-4 decoration-4 decoration-indigo-600"
-              : "text-lg font-semibold text-slate-400"
+              ? "text-indigo-500 text-lg font-semibold underline underline-offset-4 decoration-4 decoration-indigo-600"
+              : "text-lg font-semibold text-slate-500"
           }
           href={"/posts"}
           passHref
@@ -49,8 +50,8 @@ const Navbar = () => {
         <Link
           className={
             pathname === "/new"
-              ? "text-black text-lg font-semibold underline underline-offset-4 decoration-4 decoration-indigo-600"
-              : "text-lg font-semibold text-slate-400"
+              ? "text-indigo-500 text-lg font-semibold underline underline-offset-4 decoration-4 decoration-indigo-600"
+              : "text-lg font-semibold text-slate-500"
           }
           href={"/new"}
           passHref
@@ -62,7 +63,7 @@ const Navbar = () => {
             <Link
               className={
                 pathname === "/profile"
-                  ? "text-black text-lg font-semibold underline underline-offset-4 decoration-4 decoration-indigo-600"
+                  ? "text-indigo-700 text-lg font-semibold underline underline-offset-4 decoration-4 decoration-indigo-600"
                   : "text-lg font-semibold text-slate-400"
               }
               href={"/profile"}
@@ -80,6 +81,7 @@ const Navbar = () => {
             <LogoutButton />
           </>
         )}
+        <ModeToggle />
       </nav>
     </nav>
   );

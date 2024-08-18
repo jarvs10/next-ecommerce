@@ -15,7 +15,7 @@ const CreatePosts = async () => {
 
       <form
         action={createPost}
-        className="text-center bg-white p-4 mb-4 w-[35%] mx-auto"
+        className="text-center p-4 mb-4 w-[35%] mx-auto"
       >
         <div>
           <input

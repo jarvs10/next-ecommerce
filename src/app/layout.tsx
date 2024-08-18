@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 
 const poppins = Poppins(
   { subsets: ["latin"], weight: ['400', '700'] }
@@ -20,15 +21,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${poppins.className} bg-slate-200`}>
-
-        <main className="container mx-auto bg-white h-screen">
-          <Navbar />
+      <body className={`${poppins.className}`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           
-          {children}
+          <main className="container mx-auto min-h-screen">
+          
+            <Navbar />
+          
+            {children}
 
-          <Footer />
-        </main>
+            <Footer />
+          </main>
+        </ThemeProvider>
         
       </body>
     </html>
